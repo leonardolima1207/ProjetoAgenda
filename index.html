@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetoAgendaCRUD</title>
+</head>
+<body>
+    <script>
+        
+        function agendaContatos() {
+            return parseInt(prompt(
+            `
+            [1] -> Contatos Salvos
+            [2] -> Cadastrar um novo
+            [3] -> Atualizar Contato
+            [4] -> Deletar Contato
+            [5] -> Sair do Programa! 
+            `
+            ));
+        }
+        
+        let agendaArr = []
+
+        function addContato() {
+            const nomeContato = prompt("Por gentileza, informe o nome do contato:")
+            const emailContato = prompt("Agora, informe o e-mail para prosseguirmos:")
+            const telefoneContato = prompt("Por fim, descreva um telefone para contato.")
+            const Date = newDate()
+
+            if (!nomeContato || !emailContato || !telefoneContato) {
+                alert ("informação obrigatória!")                
+            }
+
+            return;
+
+            agendaArr.push({nomeContato, emailContato, telefoneContato});
+
+            console.log(agendaArr);
+            
+        }
+
+        function contatoSalvo() {
+            let contatoSalvo = "";
+
+            agendaArr.forEach((ctbase) => {
+                contatoSalvo += `Contato: ${ctbase.nomeContato}, Email ${ctbase.emailContato}, telefone: ${ctbase.telefoneContato}`
+
+            })
+
+            alert ("Contatos Salvos" + contatoSalvo);
+            
+        }
+
+        function atualizarContato() {
+
+            const buscarCnt = prompt("Qual contato deseja atualizar?")
+
+            const cntEncontrado = agendaArr.find(buscar =>
+            buscar.emailContato === buscarCnt
+        )
+            
+        
+        if (!cntEncontrado) {
+            alert ("Ops! Parece que esse contato não existe! Tente outro.")
+            
+            
+            return;
+        }
+        
+        const contatoNovo = prompt("Por obséquio, insira o novo nome");
+        const emailNovo = prompt("Agora, inserimos um novo email, ok?");
+        const telefoneAtual = prompt("um novo telefone, talvez?");
+        
+        if (contatoNovo) {
+            cntEncontrado.nomeContato = contatoNovo
+        }
+        
+        if (emailNovo) {
+            cntEncontrado.emailContato = emailNovo
+        }
+
+        if (telefoneAtual) {
+            cntEncontrado.telefoneContato = telefoneAtual
+            
+            
+            alert("Legal! Contato atualizado com êxito!!")
+        }
+    }
+
+        
+        function ExcluirContato () {
+            var removerContato = prompt("Deseja excluir algum contato?")
+
+            var removerContatoSalvo = agendaArr.findIndex((contatoSalvo) => {
+            contatoSalvo.contatoSalvo === removerContato
+            }) ;
+
+            var infoData = $({g})
+        
+    }    
+    
+
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+</body>
+</html>
